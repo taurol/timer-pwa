@@ -8,7 +8,7 @@ self.onmessage = (e: MessageEvent) => {
 
   switch (type) {
     case 'START':
-      configuredTime = payload.timeLeft;
+      configuredTime = payload.configuredTime;
       timeLeft = payload.timeLeft;
       startTimer();
       break;
@@ -28,6 +28,5 @@ function startTimer() {
     }
     
     self.postMessage({ type: 'TICK', payload: { timeLeft } });
-    console.log("timeleft is: ", timeLeft)
   }, 1000);
 }

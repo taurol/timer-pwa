@@ -175,11 +175,11 @@ function Timer() {
     } else {
       workerRef.current.postMessage({
         type: "START",
-        payload: { timeLeft },
+        payload: { timeLeft , configuredTime},
       });
     }
     setIsRunning(!isRunning);
-  }, [isRunning, timeLeft]);
+  }, [isRunning, timeLeft, configuredTime]);
 
   const resetTimer = useCallback(() => {
     createNewTimerWorker();
